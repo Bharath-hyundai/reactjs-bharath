@@ -9,6 +9,12 @@ const prisma = new PrismaClient();
 app.use(cors());
 app.use(express.json());
 
+
+// ✅ API Route: Root URL
+app.get("/", (req, res) => {
+  res.send("Welcome to the Interest Form API!");
+});
+
 // ✅ API Route: Submit Interest Form
 app.post("/api/submit", async (req, res) => {
   const { name, mobile, email, model } = req.body;
